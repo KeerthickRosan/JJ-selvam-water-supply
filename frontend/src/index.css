@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body { @apply text-slate-800 antialiased; }
+  input[type='number']::-webkit-inner-spin-button { opacity: 0.4; }
+}
+
+@layer components {
+  .card { @apply bg-white rounded-2xl border border-slate-200/80 shadow-sm; }
+  .card-pad { @apply p-4 sm:p-5; }
+  .input {
+    @apply w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 placeholder-slate-400
+      focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20 disabled:bg-slate-100 disabled:text-slate-500;
+  }
+  .label { @apply mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-500; }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl px-4 py-2 text-sm font-semibold transition
+      focus:outline-none focus:ring-2 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-primary { @apply btn bg-brand-600 text-white hover:bg-brand-700 focus:ring-brand-500; }
+  .btn-secondary { @apply btn border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 focus:ring-slate-300; }
+  .btn-danger { @apply btn bg-rose-600 text-white hover:bg-rose-700 focus:ring-rose-500; }
+  .btn-success { @apply btn bg-emerald-600 text-white hover:bg-emerald-700 focus:ring-emerald-500; }
+  .btn-ghost { @apply btn px-2 text-slate-600 hover:bg-slate-100 focus:ring-slate-200; }
+  .btn-sm { @apply px-3 py-1.5 text-xs; }
+  .icon-btn { @apply inline-flex h-8 w-8 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 hover:text-slate-800; }
+  .table-wrap { @apply overflow-x-auto; }
+  .table { @apply min-w-full divide-y divide-slate-200 text-sm; }
+  .table thead th { @apply whitespace-nowrap bg-slate-50 px-3 py-2.5 text-left text-xs font-semibold uppercase tracking-wide text-slate-500; }
+  .table tbody td { @apply whitespace-nowrap px-3 py-2.5 text-slate-700; }
+  .table tbody tr { @apply hover:bg-slate-50/70; }
+  .table tfoot td { @apply whitespace-nowrap bg-slate-100 px-3 py-2.5 font-semibold text-slate-800; }
+  .chip { @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold; }
+  .filter-btn { @apply rounded-xl border px-3 py-2 text-sm font-semibold transition; }
+}
