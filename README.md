@@ -51,9 +51,8 @@ python manage.py migrate
 python manage.py createsuperuser      # this is your login for the app
 python manage.py runserver            # API on http://127.0.0.1:8000
 ```
-> **mysqlclient on Windows:** if `pip install mysqlclient` fails, install the
-> "Microsoft C++ Build Tools", or use a prebuilt wheel. On Ubuntu:
-> `sudo apt install python3-dev default-libmysqlclient-dev build-essential pkg-config`.
+The backend uses PyMySQL, a pure-Python MySQL driver, so it does not require
+native MySQL client libraries or build tools.
 
 Optional, to try the app with sample data on a **test** database only: `python manage.py seed_demo`
 
