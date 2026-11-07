@@ -19,6 +19,8 @@ def env_list(key, default=""):
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "dev-insecure-key-change-me")
 DEBUG = env_bool("DJANGO_DEBUG", True)
 ALLOWED_HOSTS = env_list("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1")
+if "jj-selvam-water-supply.vercel.app" not in ALLOWED_HOSTS:
+    ALLOWED_HOSTS.append("jj-selvam-water-supply.vercel.app")
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -119,6 +121,8 @@ REST_FRAMEWORK = {
 
 CORS_ALLOWED_ORIGINS = env_list("CORS_ALLOWED_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173")
 CSRF_TRUSTED_ORIGINS = env_list("CSRF_TRUSTED_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173")
+if "https://jj-selvam-water-supply.vercel.app" not in CSRF_TRUSTED_ORIGINS:
+    CSRF_TRUSTED_ORIGINS.append("https://jj-selvam-water-supply.vercel.app")
 
 DATA_UPLOAD_MAX_MEMORY_SIZE = 50 * 1024 * 1024  # restore files up to 50 MB
 
